@@ -1,0 +1,44 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="static/CSS/signup.css">
+    <title>Signup Page</title>
+</head>
+<body>
+    <div class="container">
+        
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+            <strong></strong> {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endfor %}
+
+        <form class="signup-form" action="/signup" method="post">{% csrf_token %}
+            <h2>Sign Up</h2>
+            <label for="Fullname" style = "color: black;" class = "name" >Username:</label>
+            <input type="text" placeholder="Username" name="name" required>
+
+            <label for="Email" style = "color: black;" class = "mail" >E-mail:</label>
+            <input type="email" placeholder="Email" name="mail" required>
+            
+            <label for="Password" style = "color: black;" class = "password" >Password:</label>
+            <input type="password" placeholder="Password" name="password" required>
+            
+            <label for="Password" style = "color: black;" class = "password" >Confirm Password:</label>
+            <input type="password" placeholder="Password" name="confirm" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    /* Replace with your image URL */
+    background-image: url("salad.jpg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100%; /* Make sure the container covers the entire viewport */
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+
+#login-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding: 6px;  */
+    position: absolute;
+    top: 50%; /* Move the form down by 50% of the container's height */
+    left: 25%; /* Move the form horizontally by 50% of the container's width */
+    transform: translate(-50%, -50%); /* Center the form both vertically and horizontally */
+    
+    /* You can adjust the width and height if needed */
+    width: 300px;
+    height: 300px;
+
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center; 
+}
+
+#user{
+    color :#f2f2f2;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    opacity: 0;
+    animation: slideIn 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+
+a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
